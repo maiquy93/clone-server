@@ -1,0 +1,88 @@
+* {
+  color: #0e7bc4;
+  margin: 0;
+  padding: 0; }
+
+.body {
+  margin-left: 0; }
+
+h1 {
+  color: green; }
+
+.valid-form {
+  margin: 20px 600px; }
+
+.btn-primary {
+  margin-top: 15px; }
+
+.folder {
+  margin-top: 20px; }
+  .folder:hover {
+    cursor: pointer; }
+
+.user + .user {
+  margin-right: 30px; }
+
+.user {
+  display: flex;
+  margin-left: 20px; }
+
+.text1 {
+  text-decoration: none; }
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 50%; }
+
+.info {
+  display: flex;
+  flex-direction: column; }
+
+.name {
+  font-size: 18px;
+  font-weight: 700; }
+
+.nickname {
+  font-size: 14px;
+  font-weight: 600;
+  color: #838383;
+  line-height: 5px; }
+
+.user-detail {
+  margin-top: 10px; }
+
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px; }
+
+.user-bg {
+  width: 80%;
+  margin-right: 20px;
+  height: 450px;
+  object-fit: cover; }
+
+.info-avatar {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  left: 15%;
+  top: 45%; }
+
+.info-name {
+  position: absolute;
+  font-size: 30px;
+  left: 25%;
+  top: 48%; }
+
+.info-nickname {
+  position: absolute;
+  font-size: 20px;
+  left: 25%;
+  top: 53%; }

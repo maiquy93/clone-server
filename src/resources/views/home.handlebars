@@ -1,0 +1,13 @@
+<div class="folder">
+    {{#each users}}
+    <div class="user">
+        <div class="avatar-box">
+         <a class="text1" href="/users/{{this.username}}"/>
+        <img class=" avatar" src="{{this.avatar}}" alt="{{this.nickname}}"/>
+        </div>
+        <div class="info">
+        <p class="name">{{this.name}}</p>
+        <p class="nickname">{{this.nickname}}</p>
+        </div>
+    {{/each}}
+</div>
