@@ -32,6 +32,17 @@ class UsersPageController {
       res.redirect("/");
     });
   }
+  //controller edit view
+  editView(req, res, next) {
+    usersModel
+      .findOne({ _id: req.params.id })
+      .then(user => {
+        user = user.toObject();
+        res.render("users/editView", { user });
+        // res.json(user);
+      })
+      .catch(next);
+  }
 }
 
 module.exports = new UsersPageController();

@@ -1,0 +1,40 @@
+<h1>Data edit</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Nick name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col ">Avatar</th>
+      <th scope="col ">Back ground</th>
+      <th scope="col">Check</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <td>{{this.name}}</td>
+        <td>{{username}}</td>
+        <td>{{nickname}}</td>
+        <td>{{email}}</td>
+        <td>{{password}}</td>
+        <td>{{avatar}}</td>
+        <td>{{userbackground}}</td>
+        <td>{{check}}</td>
+        <td class="ml-0">
+          <a
+            type="button"
+            class="btn-link ct-btn"
+            href="/users/{{this._id}}/edit"
+          >Edit</a>
+          <button type="button" class="btn-link ct-btn">Delete</button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -20,16 +20,25 @@ h1 {
 //users
 .folder {
   margin-top: 20px;
-  &:hover {
-    cursor: pointer;
-  }
 }
-.user + .user {
-  margin-right: 30px;
+.user-item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.breaker {
+  display: none;
+}
+.breaker:nth-child(5n) {
+  display: block;
+  width: 100%;
+  height: 0;
 }
 .user {
   display: flex;
   margin-left: 20px;
+  height: 100px;
+  width: 300px;
 }
 .text1 {
   text-decoration: none;
@@ -44,12 +53,15 @@ h1 {
 .info {
   display: flex;
   flex-direction: column;
+  min-width: 220px;
 }
 .name {
+  // display: inline-block;
   font-size: 18px;
   font-weight: 700;
 }
 .nickname {
+  // display: inline-block;
   font-size: 14px;
   font-weight: 600;
   color: rgb(131, 131, 131);
@@ -80,7 +92,7 @@ h1 {
   left: 15%;
   top: 45%;
 }
-.inđo-user {
+.info-user {
   // position: absolute;
   // left: 15%;
 }
@@ -95,4 +107,41 @@ h1 {
   font-size: 20px;
   left: 25%;
   top: 53%;
+}
+.mag-l-4 {
+  margin-left: 400px;
+}
+.mag-l-3 {
+  margin-left: 300px;
+}
+.mag-l-5 {
+  margin-left: 500px;
+}
+.mag-l-6 {
+  margin-left: 600px;
+}
+.mag-l-7 {
+  margin-left: 700px;
+}
+.ml-0 {
+  margin-left: 0;
+}
+.ct-btn {
+  border: unset;
+  background-color: transparent;
+}
+.ct-btn + .ct-btn {
+  margin-left: 10px;
+}
+.pd-4 {
+  height: 300px;
+}
+.row-td {
+  display: inline-block;
+  width: 100px;
+}
+table td {
+  word-wrap: break-word; /* All browsers since IE 5.5+ */
+  overflow-wrap: break-word; /* Renamed property in CSS3 draft spec */
+  max-width: 150px;
 }

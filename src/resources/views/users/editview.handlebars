@@ -1,0 +1,38 @@
+<div class="mt-4">
+  <h3>Edit user infomation</h3>
+  <form method="POST" action="/users/storeEdit">
+    <div class="mb-3">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        value="{{user.email}}"
+      />
+       <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name"  value="{{user.name}}"/>
+    </div>  
+     <div class="mb-3">
+      <label for="username" class="form-label">User name</label>
+      <input type="text" class="form-control" name="username" value="{{user.username}}"/>
+    </div>  
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="text" class="form-control" name="password" value="{{user.password}}" />
+    </div>
+    <div class="mb-3">
+      <label for="nickname" class="form-label">Nick name</label>
+      <input type="text" class="form-control" name="nickname" value="{{user.nickname}}" />
+    </div>
+     <div class="mb-3">
+      <label for="avatar" class="form-label">Avatar</label>
+      <input type="text" class="form-control" name="avatar" value="{{user.avatar}}"/>
+    </div>
+      <div class="mb-3">
+      <label for="userbackground" class="form-label">Userbackground</label>
+      <input type="text" class="form-control" name="userbackground" value="{{user.userbackground}}"/>
+      </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
