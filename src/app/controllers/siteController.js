@@ -9,6 +9,7 @@ class SiteController {
         users = users.map(data => data.toObject());
         res.render("home", { users });
       })
+      .then(() => {})
       .catch(next);
   }
   search(req, res, next) {
@@ -16,6 +17,24 @@ class SiteController {
   }
   sign(req, res) {
     res.render("sign");
+  }
+  login(req, res, next) {
+    const test = { value: true };
+    usersModel
+      .findOne({ username: req.body.username })
+      .then(user => {
+        if (user) {
+          if (user.password === req.body.psw) {
+            const data = { ...user, isLogin: true };
+            res.json(data);
+          } else {
+            res.send(false);
+          }
+        } else {
+          res.json(false);
+        }
+      })
+      .catch(next);
   }
 }
 

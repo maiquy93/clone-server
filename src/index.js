@@ -9,9 +9,11 @@ const db = require("./config/db");
 const app = express();
 const port = 8000;
 
+const cors = require("cors");
 //connect db
 db.connect();
 
+app.use(cors());
 app.use(morgan("combined")); //HTTP logs
 
 //Middleware sử lý post từ form
