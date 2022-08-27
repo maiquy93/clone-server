@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const { engine } = require("express-handlebars");
 const { render } = require("node-sass");
 const route = require("./routes");
+
 const db = require("./config/db");
 const app = express();
 const port = 8000;
@@ -40,7 +41,7 @@ app.engine(
 app.set("view engine", "handlebars"); //set view engine là 'handlebars'
 app.set("views", "./src/resources/views");
 
-route(app);
+route(app); //su dung thiet lap route
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

@@ -18,9 +18,6 @@ class UsersPageController {
   }
   //controller create view
   create(req, res, next) {
-    var loginConfirm = {
-      confirm: true,
-    };
     res.render("users/create");
     // res.json(loginConfirm);
   }

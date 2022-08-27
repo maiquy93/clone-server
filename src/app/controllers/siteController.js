@@ -24,7 +24,7 @@ class SiteController {
       .findOne({ username: req.body.username })
       .then(user => {
         if (user) {
-          if (user.password === req.body.psw) {
+          if (req.body.psw === user.password) {
             const data = { ...user, isLogin: true };
             res.json(data);
           } else {
