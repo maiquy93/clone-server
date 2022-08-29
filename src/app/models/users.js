@@ -4,7 +4,6 @@ const ObjectId = Schema.ObjectId;
 
 const usersSchema = new Schema(
   {
-    _id: ObjectId,
     uid: String,
     name: String,
     nickname: String,

@@ -29,6 +29,13 @@ class UsersPageController {
       res.redirect("/");
     });
   }
+  register(req, res, next) {
+    const newUser = new usersModel(req.body);
+    console.log(req.body);
+    newUser.save().then(() => {
+      res.json(true);
+    });
+  }
   //controller edit view
   editView(req, res, next) {
     usersModel
