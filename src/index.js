@@ -37,7 +37,7 @@ app.engine(
       sum: (a, b) => a + b,
     },
   })
-); //sử dụng templace engine là handlebars() với name là "handlebars"
+); //sử dụng templace engine là handlebars() với extname là "handlebars"
 app.set("view engine", "handlebars"); //set view engine là 'handlebars'
 app.set("views", "./src/resources/views");
 

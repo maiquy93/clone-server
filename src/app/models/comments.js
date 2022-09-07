@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 commentsSchema = new Schema({
-  _id: ObjectId,
   content: { type: String, require },
   creatAt: { type: Date, default: Date(Date.now()).toString() },
   vidID: String,
@@ -11,6 +10,7 @@ commentsSchema = new Schema({
     UID: String,
     name: String,
     username: String,
+    avatar: String,
   },
 });
 

@@ -6,6 +6,8 @@ const commentsModel = require("../app/models/comments");
 
 //link cong kenh de len tren
 route.use("/search", siteController.search);
+
+//get paginate video
 route.get("/videos", async (req, res, next) => {
   const { limit, page } = req.query;
   try {
@@ -13,10 +15,29 @@ route.get("/videos", async (req, res, next) => {
     res.json(videos);
   } catch (error) {}
 });
+//get comment by idvideo
 route.get("/comments", async (req, res, next) => {
   try {
     const comments = await commentsModel.find({ vidID: req.query.vidid });
     res.json(comments);
+  } catch (error) {}
+});
+//add comment
+route.post("/commentpost", async (req, res, next) => {
+  console.log(req.body);
+  try {
+    const newcomment = new commentsModel(req.body);
+    await newcomment.save();
+    res.json(true);
+  } catch (error) {
+    console.log("can not connect");
+  }
+});
+//delete comment
+route.delete("/commentdelete", async (req, res, next) => {
+  console.log(req.query.id);
+  try {
+    const cmtdelete = await commentsModel.deleteOne({ _id: req.query.id });
   } catch (error) {}
 });
 route.use("/sign", siteController.sign);

@@ -29,11 +29,19 @@ class UsersPageController {
       res.redirect("/");
     });
   }
+  //sign in tiktok page
   register(req, res, next) {
     const newUser = new usersModel(req.body);
     console.log(req.body);
     newUser.save().then(() => {
       res.json(true);
+    });
+  }
+  find(req, res, nex) {
+    console.log(req.query);
+    usersModel.findOne({ username: req.query.user }).then(user => {
+      if (user) res.json(true);
+      else res.json(false);
     });
   }
   //controller edit view
