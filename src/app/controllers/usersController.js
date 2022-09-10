@@ -22,6 +22,17 @@ class UsersPageController {
     // res.json(loginConfirm);
   }
 
+  //search user in tiktok
+  async search(req, res, next) {
+    try {
+      console.log(req.query.name);
+      const users = await usersModel.find({
+        name: new RegExp(req.query.name, "i"),
+      });
+      res.json(users);
+    } catch {}
+  }
+
   //constroller create post
   storePost(req, res, next) {
     const newUser = new usersModel(req.body);
@@ -37,6 +48,7 @@ class UsersPageController {
       res.json(true);
     });
   }
+  //login valid, valid user
   find(req, res, nex) {
     console.log(req.query);
     usersModel.findOne({ username: req.query.user }).then(user => {

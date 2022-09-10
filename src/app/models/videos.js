@@ -14,7 +14,7 @@ const videosSchema = new Schema({
     userAvatar: String,
   },
   date: { type: Date, default: Date.now },
-  votes: { type: Number },
+  votes: { type: Array, default: [] },
   music: String,
 });
 

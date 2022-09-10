@@ -35,10 +35,25 @@ route.post("/commentpost", async (req, res, next) => {
 });
 //delete comment
 route.delete("/commentdelete", async (req, res, next) => {
-  console.log(req.query.id);
+  console.log(req.query);
   try {
     const cmtdelete = await commentsModel.deleteOne({ _id: req.query.id });
+    res.json(true);
   } catch (error) {}
+});
+//video vote
+route.put("/videovote", async (req, res, next) => {
+  try {
+    console.log("body: ", req.body);
+
+    console.log("query: ", req.query);
+    const doc = await videosModel.findByIdAndUpdate(req.query.videoID);
+    if (!doc.votes.includes(req.query.uservote)) {
+      doc.votes = [...doc.votes, req.query.uservote];
+    }
+    await doc.save();
+    res.json("ok");
+  } catch {}
 });
 route.use("/sign", siteController.sign);
 route.post("/login-require", siteController.login);
