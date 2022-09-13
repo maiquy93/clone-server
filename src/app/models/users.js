@@ -13,6 +13,7 @@ const usersSchema = new Schema(
     password: String,
     check: Boolean,
     userbackground: String,
+    follow: { type: Array, default: [] },
     createdAt: { type: Date, default: Date(Date.now()).toString() },
   }
   // {

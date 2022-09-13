@@ -52,7 +52,18 @@ route.put("/videovote", async (req, res, next) => {
       doc.votes = [...doc.votes, req.query.uservote];
     }
     await doc.save();
-    res.json("ok");
+    res.json("like video success");
+  } catch {}
+});
+//video vote cancel
+route.put("/videovotecancel", async (req, res, next) => {
+  try {
+    const doc = await videosModel.findOneAndUpdate(req.body.videoID);
+    if (doc.votes.includes(req.body.uservote)) {
+      doc.votes = doc.votes.filter(user => user !== req.body.uservote);
+    }
+    await doc.save();
+    res.json("unlike success");
   } catch {}
 });
 route.use("/sign", siteController.sign);
